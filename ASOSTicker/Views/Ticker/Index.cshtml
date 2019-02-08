@@ -3,9 +3,9 @@
     ViewData["Title"] = "Index";
 }
 
-<div id="app" class="ticker box">
+<div id="app">
         <div v-for="(sportstory, index) in sportstories">
-            <transition>
+            <transition name="">
                 <div v-if="sportstory.currentstory" v-bind:key="index">
                     {{ sportstory.sport }}|{{sportstory.story}}
                 </div>

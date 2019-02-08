@@ -8,7 +8,7 @@ new Vue({
         sportstories: []
     },
     mounted() {
-        axios.get('/Ticker/GetSheetData').then(response => (this.sportsstories = response))
+        axios.get('/Ticker/GetSheetData').then(response => (this.sportstories = response.data))
     },
     created: function () {
         setInterval(this.updateTicker, 5000);
@@ -16,11 +16,11 @@ new Vue({
     methods: {
         updateTicker: function () {
             var removed = this.sportstories.pop();
-            removed.currentstory = false;
-            this.sportstories[0].currentstory = true;
-            console.log(this.sportstories[0].currentstory + ' spot 0');
-            console.log(removed.currentstory + ' removed');
             this.sportstories.unshift(removed);
+            for (var i in this.sportstories) {
+                this.sportstories[i].currentstory = false;
+            }
+            this.sportstories[0].currentstory = true;
         }
     }
 });
