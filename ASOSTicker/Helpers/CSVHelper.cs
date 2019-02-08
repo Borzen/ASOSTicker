@@ -10,6 +10,9 @@ namespace ASOSTicker.Helpers
     {
         string filepath = "asos.csv";
 
-
+        public List<string> GetCSVData()
+        {
+            return File.ReadLines(filepath).ToList();
+        }
     }
 }

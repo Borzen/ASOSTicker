@@ -27,9 +27,23 @@ namespace ASOSTicker.Controllers
             //GoogleSheetsHelper gsHelper = new GoogleSheetsHelper();
             //var data = gsHelper.getSpreadSheets("1uecbj1KIfGPwmkYRZWYS9FFYc7JmQMCIjaTva26x_rQ", "ticker!A2:B");
             CSVHelper csvHelper = new CSVHelper();
-
+            var data = csvHelper.GetCSVData();
             List<StoryStuff> stories = new List<StoryStuff>();
-            return null;
+            char[] delim = new char[] { ',' };
+            int i = 0;
+            foreach(string row in data)
+            {
+                string[] results = row.Split(delim);
+                StoryStuff story = new StoryStuff()
+                {
+                    sport = results[0],
+                    story = results[1],
+                    currentstory = i == 0 ? true : false
+                };
+                stories.Add(story);
+                i++;
+            }
+            return stories;
         }
     }
 }

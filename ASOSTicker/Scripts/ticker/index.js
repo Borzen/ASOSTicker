@@ -5,16 +5,7 @@ import { setInterval } from 'timers';
 new Vue({
     el: '#app',
     data: {
-        sportstories: [{
-            currentstory: true,
-            sport: "NHL",
-            story: "Bob was bob"
-        },
-            {
-                currentstory: false,
-                sport: "NBA",
-                story: "This one is a test"
-            }]
+        sportstories: []
     },
     mounted() {
         axios.get('/Ticker/GetSheetData').then(response => (this.sportsstories = response))
