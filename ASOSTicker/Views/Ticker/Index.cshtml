@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div id="app" class="ticker box">
+        <div v-for="(sportstory, index) in sportstories">
+            <transition>
+                <div v-if="sportstory.currentstory" v-bind:key="index">
+                    {{ sportstory.sport }}|{{sportstory.story}}
+                </div>
+            </transition>
+        </div>
+</div>
+
+<script src="~/js/ticker.js"></script>
