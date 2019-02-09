@@ -1,11 +1,22 @@
 ﻿import Vue from 'vue'
 import axios from 'axios'
 import { setInterval } from 'timers';
+import BootstrapVue from 'bootstrap-vue';
+
+Vue.use(BootstrapVue);
 
 new Vue({
     el: '#app',
     data: {
-        sportstories: []
+        sportstories: [],
+        curStory: "Test Test Test",
+        curSport: "ABC",
+        changeSport: false,
+        changeStory: false
+
+    },
+    computed:
+    {
     },
     mounted() {
         axios.get('/Ticker/GetSheetData').then(response => (this.sportstories = response.data))
@@ -17,10 +28,12 @@ new Vue({
         updateTicker: function () {
             var removed = this.sportstories.pop();
             this.sportstories.unshift(removed);
-            for (var i in this.sportstories) {
-                this.sportstories[i].currentstory = false;
+            this.curSport = this.sportstories[0].sport;
+            this.curStory = this.sportstories[0].story;
+            if (this.curSport !== removed.sport) {
+                this.changeSport = true;
             }
-            this.sportstories[0].currentstory = true;
+            this.chagneStory = true;
         }
     }
 });

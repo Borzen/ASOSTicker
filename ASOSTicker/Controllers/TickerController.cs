@@ -30,7 +30,6 @@ namespace ASOSTicker.Controllers
             var data = csvHelper.GetCSVData();
             List<StoryStuff> stories = new List<StoryStuff>();
             char[] delim = new char[] { ',' };
-            int i = 0;
             foreach(string row in data)
             {
                 string[] results = row.Split(delim);
@@ -38,10 +37,8 @@ namespace ASOSTicker.Controllers
                 {
                     sport = results[0],
                     story = results[1],
-                    currentstory = i == 0 ? true : false
                 };
                 stories.Add(story);
-                i++;
             }
             return stories;
         }
