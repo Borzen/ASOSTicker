@@ -10,12 +10,14 @@ var appBasePath = './Scripts/'
 
 var jsEntries = {}
 
+
 fs.readdirSync(appBasePath).forEach(function (name) {
     var indexFile = appBasePath + name + '/index.js'
     if (fs.existsSync(indexFile)) {
         jsEntries[name] = indexFile
     }
 })
+
 
 module.exports = {
     mode: "development",
