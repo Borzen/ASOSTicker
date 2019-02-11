@@ -3,6 +3,7 @@ import axios from 'axios'
 import { setInterval } from 'timers';
 import BootstrapVue from 'bootstrap-vue';
 import './index.css';
+import 'animate.css';
 
 Vue.use(BootstrapVue);
 
@@ -13,7 +14,8 @@ new Vue({
         curStory: "Test Test Test",
         curSport: "ABC",
         changeSport: false,
-        changeStory: false
+        changeStory: false,
+        i: 0
 
     },
     computed:
@@ -24,7 +26,7 @@ new Vue({
     },
     created: function () {
         setInterval(this.updateTicker, 5000);
-        setInterval(this.clickButton, 6000); 
+        setInterval(this.clickButton, 5250); 
     },
     methods: {
         updateTicker: function () {

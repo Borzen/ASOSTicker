@@ -12,9 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "vue": "^2.5.22",
     "bootstrap-vue": "2.0.0-rc.11",
-    "vue-template-compiler": "^2.5.22"
+    "vue": "^2.5.22",
+    "vue-template-compiler": "^2.5.22",
+    "animate.css": "3.7.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

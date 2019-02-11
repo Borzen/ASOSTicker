@@ -2,9 +2,8 @@
     background-color: #33A3F1;
     color: white;
 }
-
 .slide-fade-enter-active {
-    transition: all .5s ease;
+    transition: all .3s ease;
 }
 
 .slide-fade-leave-active {

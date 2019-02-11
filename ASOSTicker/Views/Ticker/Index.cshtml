@@ -4,11 +4,9 @@
 }
 
 <div id="app">
-    @*<transition name="slide-fade" enter-active-class ="slide-fade-enter-active" leave-active-class="slide-fade-leave-active" mode="out-in">*@
     <transition-group name="slide-fade" tag="p">
-        <span class="sportStyle" key="sport" v-if="!changeSport">{{ curSport }}</span><span key="story" v-if="!changeStory">{{ curStory }}</span>
+        <span class="sportStyle" key="sport" v-if="!changeSport">{{ curSport }}</span>|<span key="story" v-if="!changeStory">{{ curStory }}</span>
     </transition-group>
-    @*</transition>*@
     <button type="button" style="display:none" id="bani" v-on:click="updateBools">test</button>
 </div>
 
