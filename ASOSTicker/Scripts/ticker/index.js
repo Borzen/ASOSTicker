@@ -3,7 +3,6 @@ import axios from 'axios'
 import { setInterval } from 'timers';
 import BootstrapVue from 'bootstrap-vue';
 import './index.css';
-import 'animate.css';
 
 Vue.use(BootstrapVue);
 
